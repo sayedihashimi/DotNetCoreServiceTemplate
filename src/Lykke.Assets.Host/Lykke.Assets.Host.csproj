@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lykke.ApiAuth.Azure\Lykke.ApiAuth.Azure.csproj" />
+    <ProjectReference Include="..\Lykke.ApiAuth.Mvc\Lykke.ApiAuth.Mvc.csproj" />
+    <ProjectReference Include="..\Lykke.ApiAuth\Lykke.ApiAuth.csproj" />
+    <ProjectReference Include="..\Lykke.Assets.Azure\Lykke.Assets.Azure.csproj" />
+    <ProjectReference Include="..\Lykke.Assets\Lykke.Assets.csproj" />
+    <ProjectReference Include="..\Lykke.Extensions\Lykke.Extensions.csproj" />
+    <ProjectReference Include="..\Lykke.Http\Lykke.Http.csproj" />
+  </ItemGroup>
+
+</Project>
