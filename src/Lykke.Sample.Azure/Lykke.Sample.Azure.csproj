@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Lykke.Assets\Lykke.Assets.csproj" />
+    <ProjectReference Include="..\Lykke.Sample\Lykke.Sample.csproj" />
   </ItemGroup>
 
 </Project>

@@ -16,10 +16,12 @@
     <ProjectReference Include="..\Lykke.ApiAuth.Azure\Lykke.ApiAuth.Azure.csproj" />
     <ProjectReference Include="..\Lykke.ApiAuth.Mvc\Lykke.ApiAuth.Mvc.csproj" />
     <ProjectReference Include="..\Lykke.ApiAuth\Lykke.ApiAuth.csproj" />
-    <ProjectReference Include="..\Lykke.Assets.Azure\Lykke.Assets.Azure.csproj" />
-    <ProjectReference Include="..\Lykke.Assets\Lykke.Assets.csproj" />
     <ProjectReference Include="..\Lykke.Extensions\Lykke.Extensions.csproj" />
+    
     <ProjectReference Include="..\Lykke.Http\Lykke.Http.csproj" />
+    
+    <ProjectReference Include="..\Lykke.Sample.Azure\Lykke.Sample.Azure.csproj" />
+    <ProjectReference Include="..\Lykke.Sample\Lykke.Sample.csproj" />
   </ItemGroup>
 
 </Project>

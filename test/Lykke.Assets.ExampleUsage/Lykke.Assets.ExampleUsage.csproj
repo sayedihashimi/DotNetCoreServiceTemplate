@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Lykke.Assets.Client\Lykke.Assets.Client.csproj" />
     <ProjectReference Include="..\..\src\Lykke.Extensions\Lykke.Extensions.csproj" />
+    <ProjectReference Include="..\..\src\Lykke.Sample.WebClient\Lykke.Sample.WebClient.csproj" />
   </ItemGroup>
 
 </Project>

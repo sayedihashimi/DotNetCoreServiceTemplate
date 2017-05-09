@@ -1,7 +1,11 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Lykke.Assets.Host
+namespace Lykke.Sample.WebApi
 {
     public class Program
     {

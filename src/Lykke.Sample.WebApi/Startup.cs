@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace Lykke.Assets.Host
+namespace Lykke.Sample.WebApi
 {
     public class Startup
     {
@@ -18,6 +18,8 @@ namespace Lykke.Assets.Host
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                // Get configurations from settings URL, for more details:
+                // https://github.com/LykkeCity/DotNetCoreServiceTemplate
                 .AddFromConfiguredUrl("TEMPLATE_API_SETTINGS_URL")
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
@@ -28,33 +30,39 @@ namespace Lykke.Assets.Host
 
         public void ConfigureServices(IServiceCollection services)
         {
+            // Add MVC
             services.AddMvc();
 
-            var log = new LogToConsole();
+            // Create a logger
+            var logger = new LogToConsole();
 
+            // Configure API Authentication
             var apiAzureConfig = Configuration
                 .GetSection("LykkeApiAuth")
                 .Get<ApiAuthAzureConfig>();
-            services.AddLykkeApiAuthAzure(apiAzureConfig, log);
-            
-            services.AddLykkeAssetsAzure(Configuration
-                .GetValue<string>("LykkeTemplateApi:ConnectionString"), log);
+            services.AddLykkeApiAuthAzure(apiAzureConfig, logger);
+
+            // Configure services/repositories
+            services.AddLykkeSampleAzure(conf =>
+            {
+                conf.ConnectionString = Configuration
+                    .GetValue<string>("LykkeTemplateApi:ConnectionString");
+
+                conf.Logger = logger;
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddConsole();
-
             if (env.IsDevelopment())
-            {
                 app.UseDeveloperExceptionPage();
-            }
 
-            app.ConfigureTemplateAuth().GetAwaiter().GetResult();
+            // Use API Authentication
+            app.UseLykkeApiAuth(conf =>
+                conf.ApiId = Configuration.GetValue<string>("LykkeTemplateApi:ApiId"));
 
-            app.UseLykkeApiAuth(conf => conf.ApiId =
-                Configuration.GetValue<string>("LykkeTemplateApi:ApiId"));
-
+            // Use MVC
             app.UseMvc();
         }
     }

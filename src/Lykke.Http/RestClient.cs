@@ -1,4 +1,4 @@
-using System.Net;
+using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -10,53 +10,80 @@ namespace Lykke.Http
     {
         protected readonly HttpClient HttpClient;
 
-        public RestClient()
+        public RestClient(RestClientConfig config)
+            : this (config.ApiUrl, config.ApiKey) { }
+
+        public RestClient(string apiUrl, string apiKey)
         {
-            HttpClient = new HttpClient();
+            HttpClient = new HttpClient
+            {
+                BaseAddress = new Uri(apiUrl)
+            };
+
+            HttpClient.DefaultRequestHeaders.Authorization =
+                new AuthenticationHeaderValue("ApiKey", apiKey);
         }
 
-        public async Task<Result<T>> GetResultAsync<T>(string address)
+        public async Task<T> GetResultAsync<T>(string address)
         {
             var response = await HttpClient.GetAsync(address);
-
-            var content = await response.Content.ReadAsStringAsync();
-            if (string.IsNullOrEmpty(content))
-                return new Result<T>
-                {
-                    Status = GetResultStatus(response)
-                };
-
-            return JsonConvert.DeserializeObject<Result<T>>(content);
+            return await ExportResult<T>(response);
         }
 
-        public async Task<Result> PostAsync(string address, object model)
+        public async Task<T> PostAsync<T>(string address, object model)
         {
             var httpContent = PrepareContent(model);
             var response = await HttpClient.PostAsync(address, httpContent);
-
-            var content = await response.Content.ReadAsStringAsync();
-            if (string.IsNullOrEmpty(content))
-                return new Result
-                {
-                    Status = GetResultStatus(response)
-                };
-
-            return JsonConvert.DeserializeObject<Result>(content);
+            return await ExportResult<T>(response);
         }
 
-        public async Task<Result> PutAsync(string address, object model)
+        public async Task PostAsync(string address, object model)
+        {
+            var httpContent = PrepareContent(model);
+            var response = await HttpClient.PostAsync(address, httpContent);
+            await ExportResult(response);
+        }
+
+        public async Task<T> PutAsync<T>(string address, object model)
         {
             var httpContent = PrepareContent(model);
             var response = await HttpClient.PutAsync(address, httpContent);
+            return await ExportResult<T>(response);
+        }
+        
+        public async Task PutAsync(string address, object model)
+        {
+            var httpContent = PrepareContent(model);
+            var response = await HttpClient.PutAsync(address, httpContent);
+            await ExportResult(response);
+        }
+
+        private static async Task<T> ExportResult<T>(HttpResponseMessage response)
+        {
+            if (!response.IsSuccessStatusCode)
+                throw await ExportException(response);
 
             var content = await response.Content.ReadAsStringAsync();
-            if (string.IsNullOrEmpty(content))
-                return new Result
-                {
-                    Status = GetResultStatus(response)
-                };
 
-            return JsonConvert.DeserializeObject<Result>(content);
+            return !string.IsNullOrEmpty(content)
+                ? JsonConvert.DeserializeObject<T>(content)
+                : default(T);
+        }
+
+        private static async Task ExportResult(HttpResponseMessage response)
+        {
+            if (!response.IsSuccessStatusCode)
+                throw await ExportException(response);
+        }
+
+        private static async Task<Exception> ExportException(HttpResponseMessage response)
+        {
+            var content = await response.Content.ReadAsStringAsync();
+            if (string.IsNullOrEmpty(content))
+                return new Exception();
+
+            return JsonConvert.DeserializeObject<RestException>(content)?.ToExecption()
+                ?? new Exception();
         }
 
         private static StringContent PrepareContent(object model)
@@ -65,33 +92,6 @@ namespace Lykke.Http
             var httpContent = new StringContent(body);
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
             return httpContent;
-        }
-
-        private static ResultStatus GetResultStatus(HttpResponseMessage response)
-        {
-            switch (response.StatusCode)
-            {
-                case HttpStatusCode.OK:
-                case HttpStatusCode.Created:
-                case HttpStatusCode.NoContent:
-                    return ResultStatus.Success;
-
-                case HttpStatusCode.NotFound:
-                    return ResultStatus.NotFound;
-
-                case HttpStatusCode.BadRequest:
-                    return ResultStatus.BadRequest;
-
-                case HttpStatusCode.Unauthorized:
-                    return ResultStatus.UnAuthenticated;
-                case HttpStatusCode.Forbidden:
-                    return ResultStatus.UnAuthorized;
-
-                default:
-                    return response.IsSuccessStatusCode
-                        ? ResultStatus.Success
-                        : ResultStatus.Error;
-            }
         }
     }
 }
