@@ -8,17 +8,16 @@
     <Folder Include="wwwroot\" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Lykke.ApiAuth" Version="1.0.0" />
+    <PackageReference Include="Lykke.ApiAuth.Azure" Version="1.0.0" />
+    <PackageReference Include="Lykke.ApiAuth.Mvc" Version="1.0.0" />
+    <PackageReference Include="Lykke.Extensions" Version="1.0.0" />
+    <PackageReference Include="Lykke.Http" Version="1.0.0" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Lykke.ApiAuth.Azure\Lykke.ApiAuth.Azure.csproj" />
-    <ProjectReference Include="..\Lykke.ApiAuth.Mvc\Lykke.ApiAuth.Mvc.csproj" />
-    <ProjectReference Include="..\Lykke.ApiAuth\Lykke.ApiAuth.csproj" />
-    <ProjectReference Include="..\Lykke.Extensions\Lykke.Extensions.csproj" />
-    
-    <ProjectReference Include="..\Lykke.Http\Lykke.Http.csproj" />
     
     <ProjectReference Include="..\Lykke.Sample.Azure\Lykke.Sample.Azure.csproj" />
     <ProjectReference Include="..\Lykke.Sample\Lykke.Sample.csproj" />

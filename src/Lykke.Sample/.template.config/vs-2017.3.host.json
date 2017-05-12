@@ -1,0 +1,13 @@
+{
+  "name": {
+    "text": "Lykke.Template.Abstractions"
+  },
+  "description": {
+    "text": "Lykke internal API template, abstractions project"
+  },
+  "order": 1000,
+  "icon": "template-icon.png",
+  "learnMoreLink": "https://github.com/LykkeCity/DotNetCoreServiceTemplate",
+  "uiFilters": [ "oneaspnet" ],
+  "supportsDocker": false
+}
