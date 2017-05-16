@@ -5,13 +5,13 @@ VisualStudioVersion = 15.0.26430.4
 MinimumVisualStudioVersion = 15.0.0.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A300C2C9-EAD0-457C-935A-C4A36ABFFC5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Clients.Abstractions", "src\Lykke.Clients.Abstractions\Lykke.Clients.Abstractions.csproj", "{14D64207-7DC6-4CAE-8192-8E19962D4545}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Template.Abstractions", "src\Lykke.Template.Abstractions\Lykke.Template.Abstractions.csproj", "{14D64207-7DC6-4CAE-8192-8E19962D4545}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Clients.Azure", "src\Lykke.Clients.Azure\Lykke.Clients.Azure.csproj", "{2146567D-A884-45B2-821C-F7E200127A5E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Template.Azure", "src\Lykke.Template.Azure\Lykke.Template.Azure.csproj", "{2146567D-A884-45B2-821C-F7E200127A5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Clients.WebApi", "src\Lykke.Clients.WebApi\Lykke.Clients.WebApi.csproj", "{948187AB-0FB9-4620-B1E1-531998D279D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Template.WebApi", "src\Lykke.Template.WebApi\Lykke.Template.WebApi.csproj", "{948187AB-0FB9-4620-B1E1-531998D279D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Clients.WebClient", "src\Lykke.Clients.WebClient\Lykke.Clients.WebClient.csproj", "{CBBFC174-CE5B-4C44-B49C-6E1345F3AFDD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Template.WebClient", "src\Lykke.Template.WebClient\Lykke.Template.WebClient.csproj", "{CBBFC174-CE5B-4C44-B49C-6E1345F3AFDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

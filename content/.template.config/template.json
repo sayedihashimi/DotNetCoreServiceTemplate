@@ -2,7 +2,7 @@
   "author": "LykkeX",
   "identity": "Lykke.Template",
   "groupIdentity": "Lykke.Template",
-  "classifications": [ "Common" ],
+  "classifications": [ "Solution" ],
   "description": "Lykke internal API template",
   "name": "Lykke.Template",
   "defaultName": "Lykke.Template",

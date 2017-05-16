@@ -7,8 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		LICENSE.md = LICENSE.md
-		Lykke.Template.sln = Lykke.Template.sln
+		content\Lykke.Template.sln = content\Lykke.Template.sln
 		README.md = README.md
+		Templates.nuspec = Templates.nuspec
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A300C2C9-EAD0-457C-935A-C4A36ABFFC8B}"
@@ -17,19 +18,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{73085A00-D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lykke.Template.ExampleUsage", "test\Lykke.Template.ExampleUsage\Lykke.Template.ExampleUsage.csproj", "{172DA99D-7185-4D7F-824B-6FF836CCD514}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lykke.Template.Abstractions", "src\Lykke.Template.Abstractions\Lykke.Template.Abstractions.csproj", "{14D64207-7DC6-4CAE-8192-8E19962D4545}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lykke.Template.Abstractions", "content\src\Lykke.Template.Abstractions\Lykke.Template.Abstractions.csproj", "{14D64207-7DC6-4CAE-8192-8E19962D4545}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lykke.Template.WebApi", "src\Lykke.Template.WebApi\Lykke.Template.WebApi.csproj", "{948187AB-0FB9-4620-B1E1-531998D279D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lykke.Template.WebApi", "content\src\Lykke.Template.WebApi\Lykke.Template.WebApi.csproj", "{948187AB-0FB9-4620-B1E1-531998D279D4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lykke.Template.WebClient", "src\Lykke.Template.WebClient\Lykke.Template.WebClient.csproj", "{CBBFC174-CE5B-4C44-B49C-6E1345F3AFDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lykke.Template.WebClient", "content\src\Lykke.Template.WebClient\Lykke.Template.WebClient.csproj", "{CBBFC174-CE5B-4C44-B49C-6E1345F3AFDD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lykke.Template.Azure", "src\Lykke.Template.Azure\Lykke.Template.Azure.csproj", "{2146567D-A884-45B2-821C-F7E200127A5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lykke.Template.Azure", "content\src\Lykke.Template.Azure\Lykke.Template.Azure.csproj", "{2146567D-A884-45B2-821C-F7E200127A5E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".template.config", ".template.config", "{66B9B7A2-E321-471E-B2C9-4FF0F2474786}"
 	ProjectSection(SolutionItems) = preProject
-		.template.config\template-icon.png = .template.config\template-icon.png
-		.template.config\template.json = .template.config\template.json
-		.template.config\vs-2017.3.host.json = .template.config\vs-2017.3.host.json
+		content\.template.config\template-icon.png = content\.template.config\template-icon.png
+		content\.template.config\template.json = content\.template.config\template.json
+		content\.template.config\vs-2017.3.host.json = content\.template.config\vs-2017.3.host.json
 	EndProjectSection
 EndProject
 Global
