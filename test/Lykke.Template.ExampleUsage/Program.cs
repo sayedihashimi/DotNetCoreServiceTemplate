@@ -1,10 +1,10 @@
 ﻿using System;
 using Lykke.Extensions.Configuration;
-using Lykke.Sample;
+using Lykke.Template.Abstractions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Lykke.Assets.ExampleUsage
+namespace Lykke.Template.ExampleUsage
 {
     class Program
     {
@@ -18,13 +18,13 @@ namespace Lykke.Assets.ExampleUsage
             var configuration = builder.Build();
 
             var serviceCollection = new ServiceCollection();
-            serviceCollection.AddLykkeSampleClient(
+            serviceCollection.AddLykkeTemplateWebClient(
                 configuration.GetValue<string>("LykkeTemplateApp:TemplateApiUrl"),
                 configuration.GetValue<string>("LykkeTemplateApp:TemplateApiKey"));
 
             var services = serviceCollection.BuildServiceProvider();
 
-            var assetsService = services.GetService<ISamplesRepository>();
+            var samplesService = services.GetService<ISamplesRepository>();
 
             var input = string.Empty;
             do
@@ -34,13 +34,31 @@ namespace Lykke.Assets.ExampleUsage
                     case "add":
                         try
                         {
-                            var item = new Sample.Sample
+                            var item = new Sample
                             {
-                                Id = "sample-001", //Guid.NewGuid().ToString(),
-                                Name = $"Sample {DateTime.Now.Ticks}",
+                                Id = Guid.NewGuid().ToString(),
+                                Name = $"Template {DateTime.Now.Ticks}",
                                 Description = "Test sample"
                             };
-                            assetsService.InsertAsync(item).GetAwaiter().GetResult();
+                            samplesService.InsertAsync(item).GetAwaiter().GetResult();
+                            Console.WriteLine("Added sample");
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e);
+                        }
+                        break;
+
+                    case "conflict":
+                        try
+                        {
+                            var item = new Sample
+                            {
+                                Id = "sample-001",
+                                Name = $"Template {DateTime.Now.Ticks}",
+                                Description = "Test sample"
+                            };
+                            samplesService.InsertAsync(item).GetAwaiter().GetResult();
                             Console.WriteLine("Added sample");
                         }
                         catch (Exception e)
@@ -52,7 +70,7 @@ namespace Lykke.Assets.ExampleUsage
                     case "list":
                         try
                         {
-                            var list = assetsService.GetAsync().GetAwaiter().GetResult();
+                            var list = samplesService.GetAsync().GetAwaiter().GetResult();
                             Console.WriteLine("Samples:");
                             foreach (var item in list)
                                 Console.WriteLine(item.Id);
@@ -64,7 +82,7 @@ namespace Lykke.Assets.ExampleUsage
                         break;
 
                     default:
-                        Console.WriteLine("Use 'add' or 'list' command");
+                        Console.WriteLine("Use 'add', 'conflict' or 'list' command");
                         break;
                 }
 

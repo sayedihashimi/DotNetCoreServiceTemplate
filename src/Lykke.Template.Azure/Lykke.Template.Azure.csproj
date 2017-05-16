@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Lykke.Sample\Lykke.Sample.csproj" />
+    <ProjectReference Include="..\Lykke.Template.Abstractions\Lykke.Template.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

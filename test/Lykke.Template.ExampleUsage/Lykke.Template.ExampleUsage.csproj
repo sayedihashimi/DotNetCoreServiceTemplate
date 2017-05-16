@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Lykke.Sample.WebClient\Lykke.Sample.WebClient.csproj" />
+    <ProjectReference Include="..\..\src\Lykke.Template.WebClient\Lykke.Template.WebClient.csproj" />
   </ItemGroup>
 
 </Project>

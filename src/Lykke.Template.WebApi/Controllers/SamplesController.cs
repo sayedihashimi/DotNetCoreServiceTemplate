@@ -3,8 +3,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Lykke.Http;
+using Lykke.Template.Abstractions;
 
-namespace Lykke.Sample.WebApi.Controllers
+namespace Lykke.Template.WebApi.Controllers
 {
     [Authorize]
     [Route("api/[controller]")]

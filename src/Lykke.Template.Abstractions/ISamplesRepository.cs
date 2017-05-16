@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Lykke.Sample
+namespace Lykke.Template.Abstractions
 {
     public interface ISample
     {

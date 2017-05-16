@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Lykke.Http;
-using Lykke.Sample.WebClient.Helpers;
+using Lykke.Template.Abstractions;
 
-namespace Lykke.Sample.WebClient
+namespace Lykke.Template.WebClient
 {
     public class SamplesRepositoryClient : ISamplesRepository
     {
         private readonly RestClient _restClient;
         private const string Endpoint = "api/samples";
 
-        public SamplesRepositoryClient(SampleRestClientConfig config)
+        public SamplesRepositoryClient(LykkeTemplateRestClientConfig config)
         {
             _restClient = new RestClient(config);
         }

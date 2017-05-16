@@ -14,17 +14,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A300C2C9-EAD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{73085A00-D3BD-4B70-9BFA-D02D0CB6BAAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Assets.ExampleUsage", "test\Lykke.Assets.ExampleUsage\Lykke.Assets.ExampleUsage.csproj", "{172DA99D-7185-4D7F-824B-6FF836CCD514}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Template.ExampleUsage", "test\Lykke.Template.ExampleUsage\Lykke.Template.ExampleUsage.csproj", "{172DA99D-7185-4D7F-824B-6FF836CCD514}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{7416E2CC-6C66-46DA-9C09-59D7FB6F0B54}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Template.Abstractions", "src\Lykke.Template.Abstractions\Lykke.Template.Abstractions.csproj", "{14D64207-7DC6-4CAE-8192-8E19962D4545}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Sample", "src\Lykke.Sample\Lykke.Sample.csproj", "{14D64207-7DC6-4CAE-8192-8E19962D4545}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Template.WebApi", "src\Lykke.Template.WebApi\Lykke.Template.WebApi.csproj", "{948187AB-0FB9-4620-B1E1-531998D279D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Sample.WebApi", "src\Lykke.Sample.WebApi\Lykke.Sample.WebApi.csproj", "{948187AB-0FB9-4620-B1E1-531998D279D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Template.WebClient", "src\Lykke.Template.WebClient\Lykke.Template.WebClient.csproj", "{CBBFC174-CE5B-4C44-B49C-6E1345F3AFDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Sample.WebClient", "src\Lykke.Sample.WebClient\Lykke.Sample.WebClient.csproj", "{CBBFC174-CE5B-4C44-B49C-6E1345F3AFDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lykke.Template.Azure", "src\Lykke.Template.Azure\Lykke.Template.Azure.csproj", "{2146567D-A884-45B2-821C-F7E200127A5E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lykke.Sample.Azure", "src\Lykke.Sample.Azure\Lykke.Sample.Azure.csproj", "{2146567D-A884-45B2-821C-F7E200127A5E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".template.config", ".template.config", "{66B9B7A2-E321-471E-B2C9-4FF0F2474786}"
+	ProjectSection(SolutionItems) = preProject
+		.template.config\template-icon.png = .template.config\template-icon.png
+		.template.config\template.json = .template.config\template.json
+		.template.config\vs-2017.3.host.json = .template.config\vs-2017.3.host.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,10 +63,10 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{172DA99D-7185-4D7F-824B-6FF836CCD514} = {73085A00-D3BD-4B70-9BFA-D02D0CB6BAAE}
-		{7416E2CC-6C66-46DA-9C09-59D7FB6F0B54} = {A300C2C9-EAD0-457C-935A-C4A36ABFFC8B}
-		{14D64207-7DC6-4CAE-8192-8E19962D4545} = {7416E2CC-6C66-46DA-9C09-59D7FB6F0B54}
-		{948187AB-0FB9-4620-B1E1-531998D279D4} = {7416E2CC-6C66-46DA-9C09-59D7FB6F0B54}
-		{CBBFC174-CE5B-4C44-B49C-6E1345F3AFDD} = {7416E2CC-6C66-46DA-9C09-59D7FB6F0B54}
-		{2146567D-A884-45B2-821C-F7E200127A5E} = {7416E2CC-6C66-46DA-9C09-59D7FB6F0B54}
+		{14D64207-7DC6-4CAE-8192-8E19962D4545} = {A300C2C9-EAD0-457C-935A-C4A36ABFFC8B}
+		{948187AB-0FB9-4620-B1E1-531998D279D4} = {A300C2C9-EAD0-457C-935A-C4A36ABFFC8B}
+		{CBBFC174-CE5B-4C44-B49C-6E1345F3AFDD} = {A300C2C9-EAD0-457C-935A-C4A36ABFFC8B}
+		{2146567D-A884-45B2-821C-F7E200127A5E} = {A300C2C9-EAD0-457C-935A-C4A36ABFFC8B}
+		{66B9B7A2-E321-471E-B2C9-4FF0F2474786} = {0384552C-7234-43CB-AF10-5F34AC0CBD31}
 	EndGlobalSection
 EndGlobal

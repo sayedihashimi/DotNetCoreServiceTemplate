@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Lykke.Sample.WebApi
+namespace Lykke.Template.WebApi
 {
     public class Program
     {

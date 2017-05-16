@@ -1,9 +1,9 @@
 {
   "name": {
-    "text": "Lykke.Template.Abstractions"
+    "text": "Lykke.Template"
   },
   "description": {
-    "text": "Lykke internal API template, abstractions project"
+    "text": "Lykke internal API template"
   },
   "order": 1000,
   "icon": "template-icon.png",

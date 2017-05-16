@@ -4,8 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using AzureStorage;
 using Microsoft.WindowsAzure.Storage.Table;
+using Lykke.Template.Abstractions;
 
-namespace Lykke.Sample.Azure
+namespace Lykke.Template.Azure
 {
     public class SampleEntity : TableEntity, ISample
     {

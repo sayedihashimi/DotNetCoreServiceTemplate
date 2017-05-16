@@ -19,8 +19,8 @@
   </ItemGroup>
   <ItemGroup>
     
-    <ProjectReference Include="..\Lykke.Sample.Azure\Lykke.Sample.Azure.csproj" />
-    <ProjectReference Include="..\Lykke.Sample\Lykke.Sample.csproj" />
+    <ProjectReference Include="..\Lykke.Template.Abstractions\Lykke.Template.Abstractions.csproj" />
+    <ProjectReference Include="..\Lykke.Template.Azure\Lykke.Template.Azure.csproj" />
   </ItemGroup>
 
 </Project>

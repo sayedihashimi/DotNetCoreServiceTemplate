@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace Lykke.Sample.WebApi
+namespace Lykke.Template.WebApi
 {
     public class Startup
     {
@@ -43,7 +43,7 @@ namespace Lykke.Sample.WebApi
             services.AddLykkeApiAuthAzure(apiAzureConfig, logger);
 
             // Configure services/repositories
-            services.AddLykkeSampleAzure(conf =>
+            services.AddLykkeTemplateAzureRepositories(conf =>
             {
                 conf.ConnectionString = Configuration
                     .GetValue<string>("LykkeTemplateApi:ConnectionString");

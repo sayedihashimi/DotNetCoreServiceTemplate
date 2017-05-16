@@ -1,0 +1,51 @@
+{
+  "author": "LykkeX",
+  "identity": "Lykke.Template",
+  "groupIdentity": "Lykke.Template",
+  "classifications": [ "Common" ],
+  "description": "Lykke internal API template",
+  "name": "Lykke.Template",
+  "defaultName": "Lykke.Template",
+  "tags": {
+    "language": "C#"
+  },
+  "shortName": "LykkeTemplate",
+  "sourceName": "Lykke.Template",
+  "preferNameDirectory": true,
+  "guids": [],
+  "sources": [
+    {
+      "source": "./",
+      "target": "./",
+      "exclude": [
+        ".vs/**",
+        "test/**",
+        ".gitignore",
+        "LICENSE.md",
+        "README.md",
+
+        "**/[Bb]in/**",
+        "**/[Oo]bj/**",
+        ".template.config/**/*",
+        "**/*.filelist",
+        "**/*.user",
+        "**/*.lock.json"
+      ]
+    }
+  ],
+  "symbols": {
+    "shortName": {
+      "type": "parameter",
+      "replaces": "LykkeTemplate"
+    },
+    "apiServePort": {
+      "type": "generated",
+      "generator": "random",
+      "parameters": {
+        "low": 1024,
+        "high": 10000
+      },
+      "replaces": "4169"
+    }
+  }
+}
