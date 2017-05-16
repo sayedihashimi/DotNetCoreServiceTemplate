@@ -19,8 +19,8 @@ namespace Lykke.Template.ExampleUsage
 
             var serviceCollection = new ServiceCollection();
             serviceCollection.AddLykkeTemplateWebClient(
-                configuration.GetValue<string>("LykkeTemplateApp:TemplateApiUrl"),
-                configuration.GetValue<string>("LykkeTemplateApp:TemplateApiKey"));
+                configuration.GetValue<string>("LykkeTempApp:TemplateApiUrl"),
+                configuration.GetValue<string>("LykkeTempApp:TemplateApiKey"));
 
             var services = serviceCollection.BuildServiceProvider();
 

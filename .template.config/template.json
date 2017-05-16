@@ -12,12 +12,21 @@
   "shortName": "LykkeTemplate",
   "sourceName": "Lykke.Template",
   "preferNameDirectory": true,
-  "guids": [],
+  "guids": [
+    "A300C2C9-EAD0-457C-935A-C4A36ABFFC5B",
+    "14D64207-7DC6-4CAE-8192-8E19962D4545",
+    "2146567D-A884-45B2-821C-F7E200127A5E",
+    "948187AB-0FB9-4620-B1E1-531998D279D4",
+    "CBBFC174-CE5B-4C44-B49C-6E1345F3AFDD"
+  ],
   "sources": [
     {
       "source": "./",
       "target": "./",
       "exclude": [
+        "Lykke.Template.Editing.sln",
+
+        ".git/**",
         ".vs/**",
         "test/**",
         ".gitignore",
@@ -36,9 +45,15 @@
   "symbols": {
     "shortName": {
       "type": "parameter",
+      "defaultValue": "LykkeTemplate",
       "replaces": "LykkeTemplate"
     },
-    "apiServePort": {
+    "restore": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true"
+    },
+    "iisServePort": {
       "type": "generated",
       "generator": "random",
       "parameters": {
@@ -46,6 +61,26 @@
         "high": 10000
       },
       "replaces": "4169"
+    },
+    "projectServePort": {
+      "type": "generated",
+      "generator": "random",
+      "parameters": {
+        "low": 1024,
+        "high": 10000
+      },
+      "replaces": "4170"
     }
-  }
+  },
+  "postActions": [
+    {
+      "condition": "(restore)",
+      "description": "Restore NuGet packages required by this project.",
+      "manualInstructions": [
+        { "text": "Run 'dotnet restore'" }
+      ],
+      "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "continueOnError": true
+    }
+  ]
 }

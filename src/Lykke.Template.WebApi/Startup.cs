@@ -46,7 +46,7 @@ namespace Lykke.Template.WebApi
             services.AddLykkeTemplateAzureRepositories(conf =>
             {
                 conf.ConnectionString = Configuration
-                    .GetValue<string>("LykkeTemplateApi:ConnectionString");
+                    .GetValue<string>("LykkeTempApi:ConnectionString");
 
                 conf.Logger = logger;
             });
@@ -60,7 +60,7 @@ namespace Lykke.Template.WebApi
 
             // Use API Authentication
             app.UseLykkeApiAuth(conf =>
-                conf.ApiId = Configuration.GetValue<string>("LykkeTemplateApi:ApiId"));
+                conf.ApiId = Configuration.GetValue<string>("LykkeTempApi:ApiId"));
 
             // Use MVC
             app.UseMvc();

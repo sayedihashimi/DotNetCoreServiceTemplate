@@ -1,35 +1,17 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.4
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0384552C-7234-43CB-AF10-5F34AC0CBD31}"
-	ProjectSection(SolutionItems) = preProject
-		.gitignore = .gitignore
-		LICENSE.md = LICENSE.md
-		README.md = README.md
-	EndProjectSection
+MinimumVisualStudioVersion = 15.0.0.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A300C2C9-EAD0-457C-935A-C4A36ABFFC5B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A300C2C9-EAD0-457C-935A-C4A36ABFFC8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Clients.Abstractions", "src\Lykke.Clients.Abstractions\Lykke.Clients.Abstractions.csproj", "{14D64207-7DC6-4CAE-8192-8E19962D4545}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{73085A00-D3BD-4B70-9BFA-D02D0CB6BAAE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Clients.Azure", "src\Lykke.Clients.Azure\Lykke.Clients.Azure.csproj", "{2146567D-A884-45B2-821C-F7E200127A5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Template.ExampleUsage", "test\Lykke.Template.ExampleUsage\Lykke.Template.ExampleUsage.csproj", "{172DA99D-7185-4D7F-824B-6FF836CCD514}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Clients.WebApi", "src\Lykke.Clients.WebApi\Lykke.Clients.WebApi.csproj", "{948187AB-0FB9-4620-B1E1-531998D279D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Template.Abstractions", "src\Lykke.Template.Abstractions\Lykke.Template.Abstractions.csproj", "{14D64207-7DC6-4CAE-8192-8E19962D4545}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Template.WebApi", "src\Lykke.Template.WebApi\Lykke.Template.WebApi.csproj", "{948187AB-0FB9-4620-B1E1-531998D279D4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Template.WebClient", "src\Lykke.Template.WebClient\Lykke.Template.WebClient.csproj", "{CBBFC174-CE5B-4C44-B49C-6E1345F3AFDD}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lykke.Template.Azure", "src\Lykke.Template.Azure\Lykke.Template.Azure.csproj", "{2146567D-A884-45B2-821C-F7E200127A5E}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".template.config", ".template.config", "{66B9B7A2-E321-471E-B2C9-4FF0F2474786}"
-	ProjectSection(SolutionItems) = preProject
-		.template.config\template-icon.png = .template.config\template-icon.png
-		.template.config\template.json = .template.config\template.json
-		.template.config\vs-2017.3.host.json = .template.config\vs-2017.3.host.json
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lykke.Clients.WebClient", "src\Lykke.Clients.WebClient\Lykke.Clients.WebClient.csproj", "{CBBFC174-CE5B-4C44-B49C-6E1345F3AFDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,14 +19,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{172DA99D-7185-4D7F-824B-6FF836CCD514}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{172DA99D-7185-4D7F-824B-6FF836CCD514}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{172DA99D-7185-4D7F-824B-6FF836CCD514}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{172DA99D-7185-4D7F-824B-6FF836CCD514}.Release|Any CPU.Build.0 = Release|Any CPU
 		{14D64207-7DC6-4CAE-8192-8E19962D4545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{14D64207-7DC6-4CAE-8192-8E19962D4545}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14D64207-7DC6-4CAE-8192-8E19962D4545}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14D64207-7DC6-4CAE-8192-8E19962D4545}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2146567D-A884-45B2-821C-F7E200127A5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2146567D-A884-45B2-821C-F7E200127A5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2146567D-A884-45B2-821C-F7E200127A5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2146567D-A884-45B2-821C-F7E200127A5E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{948187AB-0FB9-4620-B1E1-531998D279D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{948187AB-0FB9-4620-B1E1-531998D279D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{948187AB-0FB9-4620-B1E1-531998D279D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -53,20 +35,14 @@ Global
 		{CBBFC174-CE5B-4C44-B49C-6E1345F3AFDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBBFC174-CE5B-4C44-B49C-6E1345F3AFDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBBFC174-CE5B-4C44-B49C-6E1345F3AFDD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2146567D-A884-45B2-821C-F7E200127A5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2146567D-A884-45B2-821C-F7E200127A5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2146567D-A884-45B2-821C-F7E200127A5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2146567D-A884-45B2-821C-F7E200127A5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{172DA99D-7185-4D7F-824B-6FF836CCD514} = {73085A00-D3BD-4B70-9BFA-D02D0CB6BAAE}
-		{14D64207-7DC6-4CAE-8192-8E19962D4545} = {A300C2C9-EAD0-457C-935A-C4A36ABFFC8B}
-		{948187AB-0FB9-4620-B1E1-531998D279D4} = {A300C2C9-EAD0-457C-935A-C4A36ABFFC8B}
-		{CBBFC174-CE5B-4C44-B49C-6E1345F3AFDD} = {A300C2C9-EAD0-457C-935A-C4A36ABFFC8B}
-		{2146567D-A884-45B2-821C-F7E200127A5E} = {A300C2C9-EAD0-457C-935A-C4A36ABFFC8B}
-		{66B9B7A2-E321-471E-B2C9-4FF0F2474786} = {0384552C-7234-43CB-AF10-5F34AC0CBD31}
+		{14D64207-7DC6-4CAE-8192-8E19962D4545} = {A300C2C9-EAD0-457C-935A-C4A36ABFFC5B}
+		{2146567D-A884-45B2-821C-F7E200127A5E} = {A300C2C9-EAD0-457C-935A-C4A36ABFFC5B}
+		{948187AB-0FB9-4620-B1E1-531998D279D4} = {A300C2C9-EAD0-457C-935A-C4A36ABFFC5B}
+		{CBBFC174-CE5B-4C44-B49C-6E1345F3AFDD} = {A300C2C9-EAD0-457C-935A-C4A36ABFFC5B}
 	EndGlobalSection
 EndGlobal
