@@ -98,8 +98,8 @@ This project should contain _Azure_ implementations for definitions from _Abstra
 ### 3. WebApi Project
 This project should contain controllers to expose functionality as a Rest service.
 
-> ```cs
 > example `SamplesController`:
+> ```cs
 > namespace Lykke.Template.WebApi.Controllers
 > {
 >     [Authorize]
