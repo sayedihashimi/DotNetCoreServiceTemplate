@@ -46,7 +46,13 @@
     "shortName": {
       "type": "parameter",
       "defaultValue": "LykkeTemplate",
-      "replaces": "LykkeTemplate"
+      "replaces": "LykkeTemplate",
+      "isRequired": true
+    },
+    "autofac": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true"
     },
     "restore": {
       "type": "parameter",

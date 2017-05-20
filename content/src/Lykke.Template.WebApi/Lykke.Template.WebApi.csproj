@@ -4,10 +4,17 @@
     <TargetFramework>netcoreapp1.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;NETCOREAPP1_1;autofac</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
   <ItemGroup>
+    <!--#if (autofac)-->
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.1.0" />
+    <!--#endif-->
     <PackageReference Include="Lykke.ApiAuth" Version="1.0.0" />
     <PackageReference Include="Lykke.ApiAuth.Azure" Version="1.0.0" />
     <PackageReference Include="Lykke.ApiAuth.Mvc" Version="1.0.0" />
