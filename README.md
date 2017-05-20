@@ -7,7 +7,7 @@ This template should be used for internal API development
 To install this template run the following command
 
 ```ps
-dotnet new -i Lykke.Template::*
+dotnet new -i "Lykke.Template::*"
 ```
 
 If the template is changed, you can run above command again to update local installation.
